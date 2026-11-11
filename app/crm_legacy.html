@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema de Gestión Operativa</title>
+    <style>
+        body { background-color: #c0c0c0; font-family: 'Courier New', Courier, monospace; padding: 30px; }
+        .window { border: 2px outset #fff; padding: 20px; width: 350px; background-color: #d4d0c8; box-shadow: 5px 5px 5px rgba(0,0,0,0.5); }
+        .title-bar { background-color: #000080; color: white; padding: 5px; font-weight: bold; margin-bottom: 15px; }
+        label { font-size: 14px; }
+        input { margin-bottom: 15px; width: 95%; border: 2px inset #fff; }
+        button { background-color: #d4d0c8; border: 2px outset #fff; padding: 5px 15px; cursor: pointer; font-family: inherit; }
+        button:active { border-style: inset; }
+        #resultado { margin-top: 20px; font-weight: bold; color: #000080; background-color: #fff; padding: 5px; border: 1px solid #888; height: 20px;}
+    </style>
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">Módulo de Aprovisionamiento</div>
+        <label>Nombre del Cliente:</label><br>
+        <input type="text" id="nombre"><br>
+        <label>Número de Cédula:</label><br>
+        <input type="text" id="cedula"><br>
+        <label>Plan de Red (MB):</label><br>
+        <input type="text" id="plan"><br>
+        <button onclick="guardar()">Guardar Registro</button>
+        <div id="resultado"></div>
+    </div>
+    <script>
+        function guardar() {
+            let id = "RAD-HFC-" + Math.floor(Math.random() * 90000 + 10000);
+            document.getElementById("resultado").innerText = "Éxito. Radicado: " + id;
+            document.getElementById("nombre").value = "";
+            document.getElementById("cedula").value = "";
+            document.getElementById("plan").value = "";
+        }
+    </script>
+</body>
+</html>
